@@ -1,27 +1,18 @@
-let userName = "Guest"; // Default name
+let userName = "Guest"; // Default user name
 let menuItems = ["Grilled Chicken", "Pasta Carbonara", "Caesar Salad", "Margherita Pizza", "Chocolate Cake"];
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("greetButton").addEventListener("click", greetUser);
-    document.getElementById("menuButton").addEventListener("click", showMenu);
-    document.getElementById("addDishButton").addEventListener("click", addDish);
-});
-
-function greetUser() {
+function inputUserDetails() {
     let nameInput = prompt("Please enter your first name:");
-    
-    // If the input is empty, assign "Guest" as the default name
-    if (!nameInput) {
-        userName = "Guest";
-    } else {
-        userName = nameInput;
-    }
 
-    alert(`Welcome to EatNow cafe, ${userName}!`);
+    // Validate input: If empty, default to "Guest"
+    userName = nameInput && nameInput.trim() !== "" ? nameInput : "Guest";
+
+    // Display welcome message
+    alert(`Welcome to EatNow Cafe, ${userName}!`);
 }
 
-function showMenu() {
-    console.clear(); // Clears the console before displaying the menu
+function viewMenu() {
+    console.clear();
     console.log("Menu:");
     menuItems.forEach((item, index) => {
         console.log(`${index + 1}. ${item}`);
