@@ -21,6 +21,7 @@ function greetUser() {
 }
 
 function showMenu() {
+    console.clear(); // Clears the console before displaying the menu
     console.log("Menu:");
     menuItems.forEach((item, index) => {
         console.log(`${index + 1}. ${item}`);
@@ -30,8 +31,9 @@ function showMenu() {
 function addDish() {
     let newDish = prompt("Suggest a new dish to add to the menu:");
 
-    if (newDish) {
+    if (newDish && newDish.trim() !== "") {
         menuItems.push(newDish);
+        console.clear();
         console.log("Updated Menu:");
         menuItems.forEach((item, index) => {
             console.log(`${index + 1}. ${item}`);
