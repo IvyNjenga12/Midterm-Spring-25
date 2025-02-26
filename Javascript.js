@@ -33,3 +33,4 @@ function addDish() {
         console.log("No new dish added. Please enter a valid dish name.");
     }
 }
+
